@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import { MIMEType } from "util";
 
 class Disney {
+    // use orc
     async clickOnSearchText() {
         await browser.ocrClickOnText({
             text: 'PELICULAS',
@@ -18,8 +19,9 @@ class Disney {
         });
     }
 
+    // use robonut
     async clickOnImage() {
-        const location = await browser.robot.image.finder.findMatch({ needle: './images/lilo.png'});
+        const location = await browser.robot.image.finder.findMatch({ needle: './images/robonut.png'});
         console.log('location', location);
         const point = await browser.robot.rect.centerOf(location.location);
         await browser.robot.mouse.move(await browser.robot.rect.straightTo(point));
@@ -27,6 +29,7 @@ class Disney {
         await browser.pause(3000);
     }
 
+    // use robonut
     async selectBirthday() {
         await browser.robot.mouse.setPosition(new Point(880, 450));
         await browser.robot.keyboard.type(Key.Down);
@@ -37,6 +40,7 @@ class Disney {
         await browser.pause(5000);
     }
 
+    // use robonut
     async takeAScreenshot() {
         /**
          * capture, captureRegion
@@ -66,7 +70,7 @@ class Disney {
         // const originalImage = await loadImage();
         console.log(image);
         // const jimpImage = imageToJimp(image).getBuffer();
-        console.log(jimp);
+        // console.log(jimp);
     }
 
     open () {
