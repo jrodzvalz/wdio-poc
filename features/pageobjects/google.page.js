@@ -15,6 +15,7 @@ class Google {
         return $('div[role="presentation"')
     }
 
+    // use ocr
     async clickOnText() {
         await browser.ocrClickOnText({
             text: "Gmail",
@@ -30,7 +31,15 @@ class Google {
         // await this.tabGmail.click();
     }
 
-    // did not work with empty text
+    // use ocr
+    async getElementPositionByText() {
+        const result = await browser.ocrGetElementPositionByText({
+            text: "Gmail",
+            language: SUPPORTED_OCR_LANGUAGES.ENGLISH,
+        });
+    }
+
+    // use ocr - did not work with empty text
     async clickOnInput() {
         await browser.ocrClickOnText({
             text: '',
@@ -44,6 +53,7 @@ class Google {
         });
     }
 
+    // use robonut
     async clickOnPosition() {
         // await browser.setTimeout({ 'pageLoad': 20000 });
         await this.popUpSignIn.isDisplayed();
@@ -52,6 +62,7 @@ class Google {
         await browser.robot.mouse.leftClick();
     }
 
+    // use robonut
     async typeSearchText() {
         await browser.waitUntil(async () => await this.popUpPresentation.isDisplayed());
         // await this.popUpPresentation.isDisplayed();
@@ -60,6 +71,7 @@ class Google {
         await browser.pause(5000);
     }
 
+    // use robonut
     async clickOnSearchResult() {
         /* await browser.ocrClickOnText({
             text: 'Accenture: Mexico | Let There Be Change',
@@ -70,6 +82,7 @@ class Google {
         await browser.pause(5000);
     }
 
+    // use robonut
     async clickOnAppsMenu() {
         const location = await browser.robot.image.finder.findMatch({ needle: './images/menu_test.png'});
         const point = await browser.robot.rect.centerOf(location.location);
