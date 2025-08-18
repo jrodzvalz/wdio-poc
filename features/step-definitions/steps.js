@@ -53,7 +53,8 @@ Then(/^I click on Delete button/, async () => {
 
 // google page
 When(/^I click on gmail tab/, async () => {
-    await Google.clickOnText();
+    // await Google.clickOnText();
+    await Google.getElementPositionByText();
 });
 
 Then(/^I should see a login button/, async () => {
@@ -82,7 +83,7 @@ When(/^I click on peliculas menu/, async () => {
     await Disney.clickOnSearchText();
 });
 
-When(/^I click on lilo image/, async () => {
+When(/^I click on image/, async () => {
     await Disney.clickOnImage();
 });
 
