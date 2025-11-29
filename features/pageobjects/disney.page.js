@@ -44,33 +44,35 @@ class Disney {
     async takeAScreenshot() {
         /**
          * capture, captureRegion
+         * captures a screenshot and store it to the filesystem
+         * note: filePath not working
          */
-        /* const region = new Region(0, 0, 200, 200);
-        await browser.robot.screen.capture("auto_ss", FileType.JPG, ..."");
-        await browser.robot.screen.captureRegion("auto_ss_region", region, FileType.JPG); */
+        /* const region = new Region (0, 0, 200, 200);
+        await browser.robot.screen.capture ('auto_ss', FileType.JPG);
+        await browser.robot.screen.captureRegion ('auto_ss_region', region, FileType.JPG); */
 
         /**
          * grab, grabRegion
+         * allows to retrieve an Image, Image.data is a buffer
          */
-        /* const image = await browser.robot.screen.grab();
-        console.log(image);
+        /* const image = await browser.robot.screen.grab ();
+        console.log (image);
 
-        const rgbImage = image.toRGB();
-        console.log(rgbImage);
-        const buf = Buffer.from(image.data);
-        console.log(buf);
+        const rgbImage = image.toRGB ();
+        console.log (rgbImage);
+        const buf = Buffer.from (image.data);
+        console.log (buf);
 
-        fs.writeFileSync("./grab_image.png", buf); */
+        fs.writeFileSync ('./grab_image.png', buf); */
 
-        /* const regionImage = await browser.robot.screen.grabRegion(region);
-        console.log(regionImage);
-        fs.writeFileSync("./grab_regionImage.png", image.data); */
+        /* const regionImage = await browser.robot.screen.grabRegion (region);
+        console.log (regionImage);
+        fs.writeFileSync ('./grab_regionImage.png', image.data); */
 
-        const image = await browser.robot.screen.grab();
-        // const originalImage = await loadImage();
-        console.log(image);
-        // const jimpImage = imageToJimp(image).getBuffer();
-        // console.log(jimp);
+        // const originalImage = await loadImage ();
+        // const jimpImage = imageToJimp (image);
+        // jimpImage.getBuffer ()
+        // console.log (jimp);
     }
 
     open () {
